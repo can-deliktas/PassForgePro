@@ -360,6 +360,7 @@ class StealthSystem:
                     1
                 )
                 sys.exit()
+                # linux compatibility
         else:
             if os.geteuid() != 0:
                 print(f"sudo python3 {os.path.basename(sys.argv[0])}")
@@ -375,7 +376,7 @@ class StealthSystem:
                 os.environ.get("TEMP"),
                 os.path.join(os.environ.get("SystemRoot", "C:\\Windows"), "Prefetch")
             ]
-        else:
+        else: # linux compatibility tmp...
             paths = [
                 "/tmp",
                 "/var/tmp",
@@ -815,3 +816,4 @@ if __name__ == "__main__":
     StealthSystem.elevate()
     StealthSystem.ghost_protocol()
     PassForgePro().mainloop()
+
