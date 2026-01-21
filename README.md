@@ -50,7 +50,7 @@ By using this software:
 4. **Legal Compliance**: Users are responsible for ensuring their use complies with all local and international digital privacy and encryption laws.
 5. **Security Auditing**: While designed for high-end security, PassForge Pro should be used with robust operational security (OpSec) practices (e.g., air-gapped devices for maximum protection).
 
-For more details, review our [Privacy & Security Policy](website/legal.html).
+For more details, review our [Privacy & Security Policy](https://can-deliktas.github.io/PassForgePro/legal.html).
 
 ---
 
@@ -79,8 +79,8 @@ For more details, review our [Privacy & Security Policy](website/legal.html).
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/can-deliktas/PassforgeV2.git
-cd PassforgeV2/passforgepropy
+git clone https://github.com/can-deliktas/PassForgePro.git
+cd PassForgePro
 ```
 
 ### Step 2: Install Dependencies
@@ -141,11 +141,6 @@ PassforgeV2/
 │       └── ISSUE_TEMPLATE/
 │           ├── bug_report.md
 │           └── feature_request.md
-└── website/                 # Marketing & Documentation Site
-    ├── index.html
-    ├── legal.html
-    ├── faq.html
-    └── ...
 ```
 
 ---
@@ -244,7 +239,7 @@ Bu yazılımı kullanarak:
 4. **Yasal Uyumluluk**: Kullanıcılar, kullanımlarının tüm yerel ve uluslararası dijital gizlilik ve şifreleme yasalarına uygun olduğundan emin olmaktan sorumludur.
 5. **Güvenlik Denetimi**: Üst düzey güvenlik için tasarlanmış olsa da, PassForge Pro sağlam operasyonel güvenlik (OpSec) uygulamalarıyla kullanılmalıdır (örn. maksimum koruma için hava boşluklu cihazlar).
 
-Daha fazla bilgi için [Gizlilik ve Güvenlik Politikamızı](website/legal.html) inceleyin.
+Daha fazla bilgi için [Gizlilik ve Güvenlik Politikamızı](https://can-deliktas.github.io/PassForgePro/legal.html) inceleyin.
 
 ---
 
@@ -273,8 +268,8 @@ Daha fazla bilgi için [Gizlilik ve Güvenlik Politikamızı](website/legal.html
 
 ### Adım 1: Depoyu Klonla
 ```bash
-git clone https://github.com/can-deliktas/PassforgeV2.git
-cd PassforgeV2/passforgepropy
+git clone https://github.com/can-deliktas/PassForgePro.git
+cd PassForgePro
 ```
 
 ### Adım 2: Bağımlılıkları Kur
@@ -325,11 +320,8 @@ PassforgeV2/
 │       └── ISSUE_TEMPLATE/
 │           ├── bug_report.md
 │           └── feature_request.md
-└── website/                 # Pazarlama ve Dokümantasyon Sitesi
-    ├── index.html
-    ├── legal.html
-    ├── faq.html
-    └── ...
+|           └── hata-raporu.md
+|           └── özellik-i̇steği.md
 ```
 
 ---
@@ -356,8 +348,8 @@ PassForge Pro, **GNU Genel Kamu Lisansı v3.0 (GPL-3.0)** altında lisanslanmı�
 5. Bir **Pull Request** açın
 
 ### Sorun Bildirme
-- [Hata Raporu Şablonunu](passforgepropy/.github/ISSUE_TEMPLATE/bug_report.md) kullanın
-- [Özellik İsteği Şablonunu](passforgepropy/.github/ISSUE_TEMPLATE/feature_request.md) kullanın
+- [Hata Raporu Şablonunu](passforgepropy/.github/ISSUE_TEMPLATE/hata-raporu.md) kullanın
+- [Özellik İsteği Şablonunu](passforgepropy/.github/ISSUE_TEMPLATE/özellik-i̇steği.md) kullanın
 
 ---
 
@@ -398,3 +390,4 @@ def secure_wipe(data: bytearray):
 *Forged in the fires of advanced cryptography. Your identity belongs to you.*
 
 </div>
+
