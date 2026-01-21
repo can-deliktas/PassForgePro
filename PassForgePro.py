@@ -332,40 +332,84 @@ class VaultDB:
         return res
 
 class StealthSystem:
+
+    @staticmethod
+    def is_windows():
+        return os.name == "nt"
+
     @staticmethod
     def is_admin():
-        try: return ctypes.windll.shell32.IsUserAnAdmin()
-        except: return False
+        if StealthSystem.is_windows():
+            try:
+                return ctypes.windll.shell32.IsUserAnAdmin()
+            except:
+                return False
+        else:
+            return os.geteuid() == 0
 
     @staticmethod
     def elevate():
-        if not StealthSystem.is_admin():
-            # Use pythonw to avoid console, and set SW_HIDE (0)
-            ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable.replace("python.exe", "pythonw.exe"), " ".join(sys.argv), None, 0)
-            sys.exit()
+        if StealthSystem.is_windows():
+            if not StealthSystem.is_admin():
+                ctypes.windll.shell32.ShellExecuteW(
+                    None,
+                    "runas",
+                    sys.executable,
+                    " ".join(sys.argv),
+                    None,
+                    1
+                )
+                sys.exit()
+        else:
+            if os.geteuid() != 0:
+                print(f"sudo python3 {os.path.basename(sys.argv[0])}")
+                sys.exit(1)
 
     @staticmethod
     def ghost_protocol():
-        if not StealthSystem.is_admin(): return
-        paths = [os.environ.get('TEMP'), os.path.join(os.environ.get('SystemRoot', 'C:\\Windows'), 'Prefetch')]
-        exts = [".dat", ".sys", ".dll", ".cache", ".tmp", ".bin"]
+        if not StealthSystem.is_admin():
+            return
+
+        if StealthSystem.is_windows():
+            paths = [
+                os.environ.get("TEMP"),
+                os.path.join(os.environ.get("SystemRoot", "C:\\Windows"), "Prefetch")
+            ]
+        else:
+            paths = [
+                "/tmp",
+                "/var/tmp",
+                os.path.expanduser("~/.cache"),
+                os.path.expanduser("~/.local/share")
+            ]
+
+        exts = [".dat", ".cache", ".bin", ".tmp", ".sys"]
+
         for p in paths:
-            if not p or not os.path.exists(p): continue
+            if not p or not os.path.exists(p):
+                continue
             try:
-                for _ in range(8):
-                    f = os.path.join(p, f"sys_cache_{random.randint(100, 999)}_{random.choice(string.ascii_lowercase)}{random.choice(exts)}")
+                for _ in range(6):
+                    f = os.path.join(
+                        p,
+                        f"sys_cache_{random.randint(1000,9999)}_{random.choice(string.ascii_lowercase)}{random.choice(exts)}"
+                    )
                     with open(f, "wb") as dummy:
                         dummy.write(os.urandom(random.randint(1024, 8192)))
-            except: pass
+            except:
+                pass
 
     @staticmethod
     def secure_delete(path):
-        if not os.path.exists(path): return
+        if not os.path.exists(path):
+            return
         try:
             size = os.path.getsize(path)
-            with open(path, "wb") as f: f.write(os.urandom(size))
+            with open(path, "wb") as f:
+                f.write(os.urandom(size))
             os.remove(path)
-        except: pass
+        except:
+            pass
 
     @staticmethod
     def restart_app():
