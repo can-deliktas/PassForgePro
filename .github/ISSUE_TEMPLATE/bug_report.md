@@ -47,3 +47,6 @@ def test_function():
 Add any other context about the problem here.
 
 ---
+
+**Please note:**  
+- Fill out all the relevant fields to help us understand and fix the issue faster.
