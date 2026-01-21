@@ -11,6 +11,7 @@
 **[🇬🇧 English](#english) | [🇹🇷 Türkçe](#türkçe)**
 
 </div>
+
 ---
 
 # English
@@ -390,6 +391,7 @@ def secure_wipe(data: bytearray):
 *Forged in the fires of advanced cryptography. Your identity belongs to you.*
 
 </div>
+
 
 
 
