@@ -2,7 +2,7 @@
 name: Hata Raporu
 about: Geliştirmemize yardımcı olmak için bir rapor oluşturun
 title: 'Hata: [Sorunu kısaca açıklayın]'
-labels: bug
+labels: bug, Türkçe
 assignees: can-deliktas
 
 ---
@@ -48,5 +48,5 @@ Sorun hakkında başka bir bağlam ekleyin.
 
 ---
 
-**Lütfen dikkat::**  
+**Lütfen dikkat:**  
 - Tüm ilgili alanları doldurun, böylece sorunu daha hızlı anlayıp düzeltebiliriz.

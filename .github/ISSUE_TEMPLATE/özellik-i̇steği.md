@@ -2,7 +2,7 @@
 name: Özellik İsteği
 about: Bu proje için bir fikir önerin
 title: 'Özellik İsteği: [Özelliğin kısa açıklaması]'
-labels: enhancement
+labels: enhancement, Türkçe
 assignees: can-deliktas
 
 ---
